@@ -1,8 +1,9 @@
 import { MdLocationOn } from "react-icons/md";
 import { AiOutlineDollar } from "react-icons/ai";
+import { Link } from "react-router";
 
 const Job = ({job}) => {
-    const {logo, job_title, company_name, 
+    const {id, logo, job_title, company_name, 
         remote_or_onsite, location, job_type, salary} = job;
     return (
         <div className="card bg-base-100 shadow-sm py-3 border rounded border-[#7E90FE]">
@@ -26,7 +27,9 @@ const Job = ({job}) => {
                     <div className="flex"><AiOutlineDollar className="text-xl mr-1" />Salary: {salary}</div>
                 </div>
                 <div className="card-actions justify-start mt-4">
-                    <button className="btn btn-primary">View Details</button>
+                    <Link to={`job/${id}`}>
+                        <button className="btn btn-primary">View Details</button>
+                    </Link>
                 </div>
             </div>
         </div>
