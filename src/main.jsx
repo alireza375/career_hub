@@ -8,6 +8,8 @@ import AppliedJobs from "./components/AppliedJobs/AppliedJobs";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import JobDetails from "./components/JobDetails/JobDetails";
 import Jobs from "./components/Jobs/Jobs";
+import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
 
 
 const router = createBrowserRouter([
@@ -19,6 +21,14 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />
+      },
+      {
+        path: '/login',
+        element: <Login />
+      },
+      {
+        path: '/registration',
+        element: <Register />
       },
       {
         path: '/applied',

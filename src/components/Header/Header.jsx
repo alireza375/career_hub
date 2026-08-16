@@ -31,8 +31,11 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Apply Now</a>
+                <NavLink to="/login" className="btn">Login</NavLink>
             </div>
+            {/* <div className="navbar-end">
+                <a className="btn"></a>
+            </div> */}
         </div>
     );
 };
