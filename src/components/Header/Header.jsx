@@ -33,9 +33,7 @@ const Header = () => {
             <div className="navbar-end">
                 <NavLink to="/login" className="btn">Login</NavLink>
             </div>
-            {/* <div className="navbar-end">
-                <a className="btn"></a>
-            </div> */}
+           
         </div>
     );
 };

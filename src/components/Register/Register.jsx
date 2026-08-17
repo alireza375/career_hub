@@ -1,6 +1,9 @@
-import { NavLink } from "react-router";
+import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
+
+     const [showPassword, setShowPassword] = useState(false);
 
     const handleRegister = e =>{
         e.preventDefault();
@@ -27,15 +30,29 @@ const Register = () => {
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <div className="card-body">
                     <form onSubmit={handleRegister}>
-                            <fieldset className="fieldset">
-                            <label className="label">Name</label>
-                            <input type="text" className="input" placeholder="Enter Name" name="name" />
-                            <label className="label">Email</label>
-                            <input type="email" className="input" placeholder="Enter Email" name="email" />
-                            <label className="label">Password</label>
-                            <input type="password" className="input" placeholder="Enter Password" name="password" />
-                            <button className="btn btn-neutral mt-1">Sign Up</button>
-                            </fieldset>
+                        <fieldset className="fieldset">
+                        <label className="label">Name</label>
+                        <input type="text" className="input" placeholder="Enter Name" name="name" />
+                        <label className="label">Email</label>
+                        <input type="email" className="input" placeholder="Enter Email" name="email" />
+                        <label className="label">Password</label>
+                        <div className="relative">
+                            <input 
+                            type={ showPassword ? "text" : "password" } 
+                            className="input" 
+                            placeholder="Enter Password" 
+                            name="password" 
+                            required /> <span className="absolute top-2 right-6" onClick={ () => setShowPassword(!showPassword)}>
+                                {
+                                    showPassword ? <FaEyeSlash className="text-xl" /> : <FaEye className="text-xl" />
+                                }
+                                </span>
+                        </div>
+                        <br />
+                        <input type="checkbox" name="terms" id="terms" />
+                        <label htmlFor="terms">Accept our Terms and Conditions</label>
+                        <button className="btn btn-neutral mt-1">Sign Up</button>
+                        </fieldset>
                     </form>
                     </div>
                 </div>
